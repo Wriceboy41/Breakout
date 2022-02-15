@@ -44,7 +44,7 @@ public class Breakout extends GraphicsProgram {
     private Random rand;
     private int powerup;
 
-    private int t;
+
 
 
     @Override
@@ -188,6 +188,20 @@ public class Breakout extends GraphicsProgram {
                 this.remove(obj);
                 brokeBricksCount++;
                 brokeBrick.setLabel("broke bricks:" + brokeBricksCount);
+                if (brokeBricksCount == 150){
+                    for (int row = 0; row < 10; row++) {
+                        for (int col = 0; col < numBricksInRow; col++) {
+                            Brick brick = new Brick(10 + col * (Brick.WIDTH + 5), Brick.HEIGHT + row * (Brick.HEIGHT + 5), rowColors[rand.nextInt(10)], row, powerup);
+                            powerup  = rand.nextInt(20);
+                            if (powerup == 0){
+                                brick.setFillColor(Color.WHITE);
+
+                            }
+                            add(brick);
+                        }
+                    }
+                    reset();
+                }
             }
         }
         }
