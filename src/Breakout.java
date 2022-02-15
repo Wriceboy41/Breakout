@@ -44,7 +44,7 @@ public class Breakout extends GraphicsProgram {
     private Random rand;
     private int powerup;
 
-
+    private int t;
 
 
     @Override
@@ -72,6 +72,8 @@ public class Breakout extends GraphicsProgram {
 
         ball = new Ball(getWidth()/2, 350, 10, this.getGCanvas());
        add(ball);
+
+
 
        paddle = new Paddle(230, 430, 50,10);
        add(paddle);
