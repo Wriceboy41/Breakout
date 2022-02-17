@@ -202,10 +202,32 @@ public class Breakout extends GraphicsProgram {
                     }
                     reset();
                 }
-            }
-        }
-        }
+                if (brokeBricksCount == 450){
+                        for (int row = 0; row < 10; row++) {
+                            for (int col = 0; col < numBricksInRow; col++) {
+                                Brick brick = new Brick(10 + col * (Brick.WIDTH + 5), Brick.HEIGHT + row * (Brick.HEIGHT + 5), rowColors[1], row, powerup);
 
+                                add(brick);
+                            }
+                        }
+                        reset();
+                    }
+                    if (brokeBricksCount == 300){
+                        for (int row = 0; row < 10; row++) {
+                            for (int col = 0; col < numBricksInRow; col++) {
+                                Brick brick = new Brick(10 + col * (Brick.WIDTH + 5), Brick.HEIGHT + row * (Brick.HEIGHT + 5), rowColors[row], row, powerup);
+                                if (true){
+                                    brick.setFillColor(Color.WHITE);
+
+                                }
+                                add(brick);
+                            }
+                        }
+                        reset();
+                    }
+                }
+        }
+        }
 
         }
 
